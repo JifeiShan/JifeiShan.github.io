@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AI Bike Fitting Report Demo · Jifei Shan</title>
+  <meta name="description" content="AI-assisted cycling posture observation and bike fitting report prototype." />
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/">Jifei Shan</a>
+    <nav class="nav"><a href="/">Home</a><a href="/posts/">Notes</a><a href="/gallery/">Gallery</a><a href="/creators/">Creators</a><a href="/riding/">Riding</a><a href="/projects/">Projects</a></nav>
+  </header>
+  <main><article class="article project-page"><p class="eyebrow">Prototype / AI-assisted bike fitting</p><h1>AI Bike Fitting Report Demo</h1><p class="lead">这是一个半自动骑行姿态观察与 fitting report 实验：把侧面骑行视频、车辆参数和主观反馈转成一页可复核的中文报告。</p><div class="callout"><strong>当前状态：</strong>本地 demo 已在 private repo 跑通；公开网页目前只展示项目说明，不开放视频上传。真实上传分析需要后端/本地服务，不能只靠 GitHub Pages 完成。</div><h2>它想解决什么</h2><p>很多 bike fitting 讨论最后都会变成零散建议：坐垫高一点、把立短一点、膝盖轨迹看看。这个项目希望先做一个轻量流程，把观察变得结构化：视频负责提供姿态证据，规则引擎负责给出可解释判断，报告负责把结果翻译成用户和 fitter 都能讨论的语言。</p><h2>当前 demo 怎么工作</h2><ol class="steps"><li><strong>输入</strong>：10–20 秒固定侧面骑行视频 + 身高、inseam、车辆参数、痛点和骑行目标。</li><li><strong>视觉分析</strong>：本地 OpenCV 读帧，MediaPipe PoseLandmarker 识别肩、肘、髋、膝、踝等关键点。</li><li><strong>指标计算</strong>：Python 计算下死点膝角、上死点髋角、躯干角、肘角、骨盆晃动近似值和识别成功率。</li><li><strong>报告生成</strong>：规则引擎把指标转成问题假设、证据、建议和复拍计划。</li></ol><h2>示例输出会包含什么</h2><div class="metric-grid"><div class="metric-card"><strong>数据质量</strong><span>视频角度、稳定性、关键点识别率</span></div><div class="metric-card"><strong>视觉指标</strong><span>膝角、髋角、躯干角、肘角、骨盆晃动</span></div><div class="metric-card"><strong>问题假设</strong><span>坐垫可能偏高、前伸可能偏长、膝盖轨迹需复查等</span></div><div class="metric-card"><strong>下一步</strong><span>只改一个变量，复拍同角度视频，对比前后变化</span></div></div><h2>需要什么素材</h2><p>如果要做第一份真实报告，请提供一段 10–20 秒侧面骑行台视频。手机固定在自行车正侧面，画面里尽量同时看到肩、肘、髋、膝、踝、脚踏、车把和坐垫。最好再补充身高、inseam、曲柄长度、坐垫高度、把立长度、主要不适点和骑行目标。</p><h2>边界</h2><ul><li>这不是医疗诊断。</li><li>这不是专业线下 bike fitting 的替代品。</li><li>2D markerless 视频分析会受拍摄角度、衣服遮挡、光线和踏频影响。</li><li>AI report 只能作为复测和沟通起点，最终应由真人 fitter / 教练 / 医生在合适场景下复核。</li><li>真实用户视频和身体数据默认不公开，不提交到 public repo。</li></ul><h2>当前可见成果</h2><p>private repo 中已经有本地上传页面、姿态分析脚本、公开视频测试脚本、报告生成脚本和视频采集模板。公开站点暂时只展示这个说明页；等有 1–2 个真实样例验证报告质量后，再决定是否做真正在线上传版本。</p></article></main>
+  <section class="share-box" data-share-box>
+    <div>
+      <p class="eyebrow">Share</p>
+      <h2>分享这个页面</h2>
+      <p class="muted">复制链接，或用手机扫描二维码打开当前页面。</p>
+      <div class="share-actions">
+        <button type="button" data-copy-link>复制链接</button>
+        <button type="button" data-native-share>系统分享</button>
+        <span class="muted" data-share-status></span>
+      </div>
+    </div>
+    <img data-qr alt="QR code" />
+  </section>
+  <footer class="site-footer">Built from a private source repo. Public site contains only selected posts and selected media.</footer>
+  <script src="/share.js" defer></script>
+</body>
+</html>
