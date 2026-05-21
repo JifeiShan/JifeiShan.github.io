@@ -40,6 +40,8 @@ h3 { margin-top: 28px; }
 .post-card a { text-decoration: none; }
 .meta, .tags, .muted { color: var(--muted); font-size: 14px; }
 .tags { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 14px; }
+.media-links { color: var(--accent-2); font-size: 14px; }
+.media-links a { text-decoration: none; border-bottom: 1px solid rgba(138,180,255,.35); }
 .tag { background: rgba(138,180,255,.12); color: #c8d8ff; border: 1px solid rgba(138,180,255,.22); border-radius: 999px; padding: 3px 9px; }
 .media-card img, .post-cover, .embed { width: 100%; border-radius: 18px; display: block; background: var(--panel-2); border: 1px solid var(--line); }
 .embed { aspect-ratio: 16 / 9; height: auto; min-height: 220px; }
