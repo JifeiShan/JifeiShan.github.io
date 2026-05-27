@@ -82,3 +82,9 @@ h3 { margin-top: 28px; }
 .metric-card strong { display: block; color: var(--accent); font-size: 18px; margin-bottom: 6px; }
 .metric-card span { color: var(--muted); font-size: 14px; }
 @media (max-width: 820px) { .metric-grid { grid-template-columns: 1fr; } }
+.table-wrap { overflow-x: auto; margin: 18px 0 28px; border: 1px solid var(--line); border-radius: 18px; background: rgba(255,255,255,.03); }
+table { width: 100%; border-collapse: collapse; min-width: 680px; }
+th, td { padding: 10px 12px; border-bottom: 1px solid var(--line); text-align: left; vertical-align: top; }
+th { color: var(--accent); background: rgba(114,230,172,.07); font-size: 14px; }
+td { color: #d8e0ea; font-size: 14px; }
+tr:last-child td { border-bottom: 0; }
